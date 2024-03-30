@@ -1,0 +1,561 @@
+@font-face {
+    font-family: "Montserrat SemiBold";
+    src: url(../../../../Montserrat/Montserrat-SemiBold.html) format("truetype")
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../../../../Montserrat/Montserrat-Regular.html) format("truetype")
+}
+
+.min-header {
+    display: none;
+}
+
+.bluebtn_bird {
+    color: black; 
+    border: 1px solid #000;
+    text-transform: lowercase;
+    transition: 0.5s;
+}
+
+.bluebtn_bird:hover {
+    background-color: #efefef;
+    border: 2px solid #000;
+}
+
+@media(max-width:430px) {
+    .min-header {
+        display: block;
+        width: 100%;
+    }
+    .min-header .cet {
+        margin: 0 auto;
+        padding-top: 10px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #main-header {
+        display: none;
+    }
+}
+
+
+/* The Modal (background) */
+
+.modal,
+.modal2 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Black w/ opacity */
+    z-index: 999999999999999999999;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 35%;
+    /* Could be more or less, depending on screen size */
+    box-shadow: rgba(187, 187, 187, 0.6) 0px 0px 1px 1px;
+    z-index: 9999999999999;
+}
+
+.modal-content2 {
+    opacity: 1;
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: #111722;
+    margin: 5% auto;
+    /* 15% from the top and centered */
+    padding: 0;
+    border: solid 1px #111722;
+    border-radius: 10px;
+    width: 30%;
+    color: #808080;
+    /* Could be more or less, depending on screen size */
+    z-index: 9999999999999;
+}
+
+.modal-content2 .tit {
+    width: 100%;
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-content2 .body {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.modal-content2 .body a {
+    color: #03b2cb;
+    text-decoration: none !important;
+}
+
+.modal-content2 .body small {
+    color: #808080;
+    font-size: 0.8em;
+}
+
+.modal-content2 .body h4 {
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.modal-content2 .body label {
+    color: #808080;
+}
+
+.modal-content2 .body textarea,
+.modal-content2 .body input {
+    font: inherit;
+    color: currentColor;
+    width: 100%;
+    border: 0;
+    height: 1.1876em;
+    margin: 5px 0 10px 0;
+    display: block;
+    padding: 6px 0 7px;
+    min-width: 0;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    letter-spacing: inherit;
+    animation-duration: 10ms;
+    -webkit-tap-highlight-color: transparent;
+    padding: 27px 12px 10px;
+    background: #2D2E32;
+}
+
+.modal-content2 .body textarea:focus,
+.modal-content2 .body input:focus {
+    border: solid 0.2px #03b2cb;
+    outline: none;
+}
+
+.modal-content-sm {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 30%;
+    /* Could be more or less, depending on screen size */
+    box-shadow: rgba(187, 187, 187, 0.6) 0px 0px 1px 1px;
+    z-index: 9999999999999;
+}
+
+@media (max-width: 768px) {
+    .modal-content,
+    .modal-content2,
+    .modal-content-sm {
+        width: 95%;
+        /* Could be more or less, depending on screen size */
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close2 {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 100%;
+    background: #454545;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-right: 15px;
+    margin-top: 15px
+}
+
+.close:hover,
+.close:focus,
+.close2:hover,
+.close2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Style inputs, select elements and textareas */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    /* border: 1px solid #ccc !important; */
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+
+/* Style the label to display next to the inputs */
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+/* Style the submit button */
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+
+/* Style the container */
+
+.container {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+/* Floating column for labels: 25% width */
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+
+/* Floating column for inputs: 75% width */
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+button {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    /* background: #2cb7bc; */
+    text-transform: uppercase;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: capitalize;
+    border: none;
+    margin-top: 10px;
+}
+
+button:disabled {
+    opacity: 0.3;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.btn,
+a .btn,
+.btn2,
+a .btn2 {
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    -webkit-transition: ease-in-out .2s;
+    -moz-transition: ease-in-out .2s;
+    -ms-transition: ease-in-out .2s;
+    -o-transition: ease-in-out .2s;
+    transition: ease-in-out .2s;
+}
+
+.btn img,
+a .btn img .btn2 img,
+a .btn2 img {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btn-main,
+a .btn-main {
+    background: #1868B7 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.btn-main:hover,
+a:hover .btn-main {
+    background: #11457d !important;
+    color: #fff !important;
+}
+
+.btn-outline-main,
+a .btn-outline-main {
+    border: #11457d 1px solid !important;
+    color: #11457d !important;
+    text-decoration: none !important;
+}
+
+.btn-outline-main:hover,
+a:hover .btn-outline-main {
+    background: #11457d !important;
+    border: #11457d 1px solid !important;
+    color: #fff !important;
+}
+
+.btn-big,
+a .btn-big {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #1f1f1f;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 5px;
+    align-items: center;
+    width: 100%;
+    border: solid 1px #2d2d2d;
+    padding-left: 30%;
+}
+
+.btn-big img,
+a .btn-big img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.btn-big h5,
+a .btn-big h5 {
+    font-size: Montserrat SemiBold !important;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #1f1f1f;
+    text-decoration: none !important;
+}
+
+.btn-big:hover,
+a:hover .btn-big:hover {
+    border: solid 1px #01b757;
+}
+
+.tab,
+.tab ul {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tab ul li {
+    padding: 10px;
+    border-bottom: solid 1px #ccc;
+    cursor: pointer;
+    -webkit-transition: ease-in-out .2s;
+    -moz-transition: ease-in-out .2s;
+    -ms-transition: ease-in-out .2s;
+    -o-transition: ease-in-out .2s;
+    transition: ease-in-out .2s;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.tab ul li:hover {
+    border-bottom: solid 1px #1868B7;
+}
+
+.tab ul li.active {
+    border-bottom: solid 2px #1868B7;
+}
+
+.tabContent {
+    margin-top: 15px;
+    display: none;
+}
+
+.tabContent.active {
+    display: block;
+}
+
+.textCenter {
+    text-align: center;
+    color: #fff;
+}
+
+.mintContainer {
+    width: 40%;
+    margin: 30px auto;
+    /* border: solid 1px #ccc; */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media(max-width:740px) {
+    .mintContainer {
+        width: 90%;
+    }
+}
+
+.mintContainer .supplyDiv {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mintContainer .countDiv {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mintContainer .countDiv .tg {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.curs {
+    cursor: pointer;
+}
+
+.w25 {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.walletBtn {
+    background: #3b99fc;
+    color: #fff;
+}
+
+.mainBtn {
+    background: #03b2cb;
+    color: #fff;
+    width: 100%;
+}
+
+.loadDiv {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 10px;
+    box-shadow: #ebeaea 0px 1px 1px 2px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 20px;
+}
+
+.loadDiv img {
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.loadDiv .errorDis {
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+.loadDiv .errorDis .initiating {
+    color: orange;
+}
+
+.loadDiv .errorDis .error {
+    color: red;
+}
+
+.loadDiv .errorDis .manual {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    background: #01b757;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    margin-left: 5px;
+}
+
+.loadDiv .errorDis .manual:hover {
+    background: #017c3b;
+}
