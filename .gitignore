@@ -1,2 +1,3 @@
-.*
+.vscode
 !/.gitignore
+conn_keys.js
