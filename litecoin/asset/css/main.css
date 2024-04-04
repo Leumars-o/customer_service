@@ -1,0 +1,111 @@
+* {
+    font-family: 'Source Sans Pro';
+    text-decoration: none !important;
+}
+
+a {
+    color: #88cbf5;
+}
+
+body {
+    background: #f5f7f9;
+}
+
+.menu_btn {
+    padding: 20px 15px 20px 15px !important;
+    color: #a5a8a9 !important;
+    margin: 0px 5px 0px 5px;
+}
+
+.menu_btn.active {
+    background: #a5a8a9;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #fff !important;
+    padding: 20px 15px 20px 15px !important;
+}
+
+.menu_btn.ticket {
+    border-radius: 5px;
+    border: solid #eee 1px;
+    background: #fff;
+    color: #a5a8a9 !important;
+    padding: 10px 15px 10px 15px !important;
+}
+
+.menu_btn.connect {
+    border-radius: 5px;
+    border: solid #fff 1px;
+    background: #88cbf5;
+    color: #fff !important;
+    padding: 10px 15px 10px 15px !important;
+}
+
+.home_bg {
+    margin-top: 80px;
+    background: #7a7b7b;
+    min-height: 450px;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.home_bg .search {
+    border-radius: 5px;
+    width: 30%;
+    background: #fff;
+    display: block;
+}
+
+.home_bg .search input {
+    padding: 15px;
+    font-size: large;
+    outline: none;
+    border: none;
+    background: none;
+    width: 89%;
+}
+
+.search-btn {
+    width: 10%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px 0px 15px 0px;
+    border: none;
+}
+
+.home_card {
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.main_card,
+a .main_card {
+    border-radius: 10px;
+    padding: 15px;
+    border: #ccc solid 1px;
+    color: #12344d;
+    background: #ffffff;
+}
+
+.box-card,
+a .box-card {
+    padding: 10px;
+    color: #a5a8a9;
+}
+
+.box-card img,
+a .box-card img {
+    margin-left: 20px !important;
+}
+
+footer {
+    background: #a5a8a9;
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}

