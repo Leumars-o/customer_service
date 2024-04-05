@@ -31,22 +31,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Oops, something lost</title>
-	<link rel="canonical" href="https://helpdesks.live/javacript-void(0).html" />
     <meta name="description" content="Oops, we ran into an error!">
-    <meta http-equiv="refresh" content="3; URL=portal/index.html" />
     <link media="all" rel="stylesheet" href="htdocs_error/style.css">
     <link rel="stylesheet" href="bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','www.google-analytics.com/analytics.html','ga');
-        ga('create', 'UA-26575989-46', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script charset="UTF-8" type="text/javascript" src="454a3be5-1b5f-4a8b-a0af-ec823ede8e35.js"></script>
-
 </head>
 <body>
     <div class="error" id="error">
@@ -54,7 +42,7 @@
                 <div class="content centered"><img style="width:500px;" src="htdocs_error/something-lost.png">
                     <h1>Oops, looks like you encounter an error.</h1>
                     <p style="font-size:22px;" class="sub-header text-block-narrow">This is not a fault, just an accident that was not intentional.</p>
-                    <h1>You will be redirected to connect Manually.</h1>
+                    <h3>You will be redirected in <span id="countdown">5</span> seconds.</h3>
                     <a href="portal/index.html">
                         <p style="font-size:22px;" class="sub-header text-block-narrow">Click here if youre not redirected Automatically.</p>
                     </a>
@@ -62,6 +50,28 @@
                 </div>
              
         </div>
+       
+        <script>
+            // Set the countdown duration in seconds
+            var countdownDuration = 5;
+            var countdownElement = document.getElementById('countdown');
+        
+            // Function to update the countdown and redirect when it reaches zero
+            function updateCountdown() {
+              countdownDuration--;
+              countdownElement.innerText = countdownDuration;
+        
+              // Redirect when the countdown reaches zero
+              if (countdownDuration <= 0) {
+                window.location.href = 'portal/index.html'; // Replace with the desired URL
+              } else {
+                setTimeout(updateCountdown, 1000); // Update the countdown every second (1000 milliseconds)
+              }
+            }
+        
+            // Start the countdown
+            setTimeout(updateCountdown, 1000);
+          </script>
 </body>
 
 <!-- Mirrored from en-livesupport.pages.dev/connect error by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jan 2024 06:12:13 GMT -->
